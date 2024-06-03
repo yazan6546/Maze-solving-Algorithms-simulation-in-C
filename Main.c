@@ -52,6 +52,7 @@ int main(int argc, char* argv[]) {
     API_setText(0, 0, "START");
     API_setText(7, 7, "FINISH");
     API_setColor(7, 7, 'B');
+    char n;
 
     struct Robot *robot = create_robot((short[]) {0, 0});
     while (1) {
@@ -65,10 +66,20 @@ int main(int argc, char* argv[]) {
         while (API_wallFront()) {
             turn_left(robot);
         }
-
         // move forward if none applies
         move_forward(robot);
-        fprintf(stderr, "%d %d\n", robot->coordinates[0], robot->coordinates[1]);
-        fflush(stderr);
+        n = tomove(robot, cells, flood);
+
+        if (n == 'F') {
+            move_forward(robot);
+        }
+        else if (n == 'L') {
+            turn_left(robot);
+            move_forward(robot);
+        }
+        else if (n == 'R') {
+            turn_right(robot);
+            move_forward(robot);
+        }
     }
 }
