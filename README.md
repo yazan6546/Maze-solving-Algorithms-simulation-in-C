@@ -52,3 +52,7 @@ This algorithm is more efficient for solving complex mazes as it guarantees the 
 ### Right turn rule setup: 
 ![Alt text](Images/Right_turn.png)
 
+## Contributors
+- [Yazan AbuAloun](https://github.com/yazan6546)
+- [Noor Mouadi](https://github.com/NoorMouadi)
+
