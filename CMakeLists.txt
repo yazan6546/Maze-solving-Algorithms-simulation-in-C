@@ -3,9 +3,16 @@ project(ok C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(ok Main.c
+add_executable(flood_fill
         API.c
-        Robot.h
         Robot.c
-        Algorithm.c
-        Algorithm.h)
+        flood_fill.c
+        Stack.c
+        Flood_fill_driver.c
+)
+
+add_executable(right_turn
+        right_turn_driver.c
+        API.c
+        Robot.c
+)

@@ -1,6 +1,5 @@
 #include <stdio.h>
-#include "API.h"
-#include "Robot.h"
+#include "flood_fill.h"
 
 void log(char* text) {
     fprintf(stderr, "%s\n", text);
@@ -9,6 +8,7 @@ void log(char* text) {
 
 int main(int argc, char* argv[]) {
 
+    int x, y, xprev, yprev;
     int cells[16][16] = {{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
              {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
              {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
@@ -57,17 +57,23 @@ int main(int argc, char* argv[]) {
     struct Robot *robot = create_robot((short[]) {0, 0});
     while (1) {
 
-        // turn to the right whenever you can
-        if (!API_wallRight()) {
-            turn_right(robot);
+
+        x = robot->coordinates[0];
+        y = robot->coordinates[1];
+        xprev = robot->prevCoordinates[0];
+        yprev = robot->prevCoordinates[1];
+
+        updateWalls(robot, cells);
+
+        if (flood[x][y] != 0) {
+            flood_fill(x, y, xprev, yprev, flood, cells);
         }
 
-        // perform a U-turn if there is wall in the front, or turn left if you cannot turn right
-        while (API_wallFront()) {
-            turn_left(robot);
+        else {
+            exit(0);
         }
-        // move forward if none applies
-        move_forward(robot);
+
+        update_maze(robot, cells, flood);
         n = tomove(robot, cells, flood);
 
         if (n == 'F') {
@@ -78,6 +84,11 @@ int main(int argc, char* argv[]) {
             move_forward(robot);
         }
         else if (n == 'R') {
+            turn_right(robot);
+            move_forward(robot);
+        }
+        else if (n == 'B') {
+            turn_right(robot);
             turn_right(robot);
             move_forward(robot);
         }
