@@ -55,4 +55,5 @@ This algorithm is more efficient for solving complex mazes as it guarantees the 
 ## Contributors
 - [Yazan AbuAloun](https://github.com/yazan6546)
 - [Noor Mouadi](https://github.com/NoorMouadi)
+- [Abdulhameed Awad](https://github.com/ABOUSHI121)
 
