@@ -44,3 +44,11 @@ This algorithm is more efficient for solving complex mazes as it guarantees the 
 2. Run the simulator and click the "+" button to configure a new algorithm
 3. Enter the config for your algorithm (name, directory, and run command)
 4. Click the "Run" button
+
+## Examples 
+### Flood fill setup: 
+![Alt text](Images/Flood_fill.png)
+
+### Right turn rule setup: 
+![Alt text](Images/Right_turn.png)
+
