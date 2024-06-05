@@ -1,11 +1,11 @@
 # Maze-solving Algorithms simulation in C
-# Description
-This project simulates two classic maze-solving algorithms using C: the Flood Fill algorithm 
-and the Right Turn Rule algorithm. 
+## Description
+This project simulates two classic maze-solving algorithms using C: [Flood Fill algorithm](https://en.wikipedia.org/wiki/Flood_fill) 
+and [Right Turn Rule algorithm](https://en.wikipedia.org/wiki/Maze_solving_algorithm#Wall_follower).  
 The simulator demonstrates how these algorithms can be applied to navigate and solve mazes efficiently. 
 Each algorithm is implemented with its own header files and drivers, making it easy to switch between 
 and test different strategies.
-For use with [mackorone/mms]((https://github.com/mackorone/mms)), a Micromouse simulator.
+For use with [mackorone/mms](https://github.com/mackorone/mms), a Micromouse simulator.
 
 ## Algorithms
 
@@ -37,3 +37,10 @@ This algorithm is more efficient for solving complex mazes as it guarantees the 
 - **Stack.c / Stack.h:** Stack implementation used by the algorithms.
 - **flood_fill.c / flood_fill.h:** Implementation and definitions for the Flood Fill algorithm.
 - **right_turn_driver.c:** Driver file for executing the Right Turn Rule algorithm.
+
+
+## Usage with the Simulator
+1. Download [the Micromouse simulator](https://github.com/mackorone/mms#download)
+2. Run the simulator and click the "+" button to configure a new algorithm
+3. Enter the config for your algorithm (name, directory, and run command)
+4. Click the "Run" button
